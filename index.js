@@ -2,7 +2,8 @@ let btn = document.querySelector(".record-btn")
 
 btn.addEventListener("click", async function() {
     let stream = await navigator.mediaDevices.getDisplayMedia({
-        video: true
+        video: true,
+        audio: true
     })
 
     //needed for better browser support
@@ -33,6 +34,5 @@ btn.addEventListener("click", async function() {
         a.click()
     })
 
-    //we have to start the recorder manually
     mediaRecorder.start()
 })
